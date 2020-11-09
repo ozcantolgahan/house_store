@@ -1,0 +1,160 @@
+.main-discount-products
+    .card
+        width: 30%
+        border: none
+        text-align: center
+        &:hover .carousel-control-prev,&:hover .carousel-control-next
+            display: block
+        .carousel-control-prev,.carousel-control-next
+            background-color: #333333
+            height: 50px
+            top: 40%
+            display: none
+            padding-top: 15px
+        .ex-price
+            margin-left: -300px
+        h5
+            color: #F67280
+        &:hover .productOpt
+            display: block
+        .productOpt
+            position: absolute
+            z-index: 10
+            top: 0%
+            right: 0%
+            display: none
+            .productBasket
+                background-color: #333333
+                width: 34px
+                height: 34px
+                border-radius: 50%
+                padding-top: 7.5px
+                display: block
+                margin-top: 5px
+                .productBasket-logo
+                    background-image: url(../img/basket_hover.png)
+                    width: 17px
+                    height: 17px
+                    margin: auto
+                    background-size: contain
+            .productPrew
+                background-color: #333333
+                width: 34px
+                height: 34px
+                border-radius: 50%
+                padding-top: 7.5px
+                display: block
+                margin-top: 5px
+                .productPrew-logo
+                    background-image: url(../img/retina.png)
+                    width: 17px
+                    height: 17px
+                    margin: auto
+                    background-size: contain
+.main-fragman-banner
+    background-image: url(../img/banner.png)
+    background-size: cover
+    background-position: center
+    height: 370px
+    padding-top: 100px
+    .banner-content
+        width: 40%
+        margin: auto
+        p
+            font-size: 17px
+            font-weight: 600
+        
+
+.last-products
+    margin-top: 70px
+    .card
+        text-align: center
+        border: none
+        &:hover .productOpt
+            display: block
+    .productOpt
+            position: absolute
+            z-index: 10
+            top: 0%
+            right: 0%
+            display: none
+            .productBasket
+                background-color: #333333
+                width: 34px
+                border: none
+                height: 34px
+                border-radius: 50%
+                display: inline-block
+                .productBasket-logo
+                    background-image: url(../img/basket_hover.png)
+                    width: 17px
+                    height: 17px
+                    margin: auto
+                    background-size: contain
+            .productPrew
+                background-color: #333333
+                width: 34px
+                height: 34px
+                border-radius: 50%
+                padding-top: 7.5px
+                display: block
+                margin-top: 5px
+                .productPrew-logo
+                    background-image: url(../img/retina.png)
+                    width: 17px
+                    height: 17px
+                    margin: auto
+                    background-size: contain
+.fast-info
+    background-color: whitesmoke
+    height: 150px
+.main-box-info
+    background-image: url(../img/info-bax-banner.png)
+    width: 100%
+    height: 400px
+    background-size: cover
+    background-position: center
+    &:hover
+        background-image: url(../img/info-bax-banner-hover.png)
+        cursor: pointer
+    &:hover .main-box-content
+        display: block
+    .main-box-content
+        width: 35%
+        margin: auto
+        text-align: center
+        color: white
+        padding-top: 150px
+        display: none
+@mixin box-info($img)
+    background-image: $img
+    width: 100%
+    height: 300px
+    &:hover .card-img-overlay
+        display: block
+        cursor: pointer
+    .card-img-overlay
+        margin-top: 55px
+        display: none
+    
+.box-infos        
+    .box-info-1
+        @include box-info(url(../img/info-box-1.png))
+        &:hover
+            background-image: url(../img/info-box-1-hover.png)
+    .box-info-2
+        @include box-info(url(../img/info-box-2.png))
+        &:hover
+            background-image: url(../img/info-box-2-hover.png)
+    .box-info-3
+        @include box-info(url(../img/info-box-3.png))
+        &:hover
+            background-image: url(../img/info-box-3-hover.png)
+        
+.contact-icons
+    img
+        position: absolute
+        left: 45%
+        top: 13%
+    h4
+        margin-top: 60px

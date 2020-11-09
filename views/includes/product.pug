@@ -1,0 +1,36 @@
+.card
+  .productOpt
+    form(action=`/addToBasket` method="POST")
+      input(type="hidden" name="product" value=product)
+      button.productBasket(type="submit")
+        .productBasket-logo(style="margin-top:-6px")
+    form(action=`/product/${product.name}` method="GET")
+      input(type="hidden" name="product" value=product)
+      button.productPrew(type='submit')
+        .productPrew-logo(style="margin-top:-6px")
+  div(data-interval='false' id=`slider${product._id}`).carousel.slide
+    .carousel-inner(role='listbox')
+      .carousel-item.active
+        img.d-block.w-100(src=`${product.imageUrl1}` style='width: 900px; height: 300px;')
+      .carousel-item
+        img.d-block.w-100(src=`${product.imageUrl2}` style='width: 900px; height: 300px;')
+    a.carousel-control-prev(href=`#slider${product._id}` role='button' data-slide='prev')
+      span.carousel-control-prev-icon(aria-hidden='true')
+      span.sr-only Previous
+    a.carousel-control-next(href=`#slider${product._id}` role='button' data-slide='next')
+      span.carousel-control-next-icon(aria-hidden='true')
+      span.sr-only Next
+  .card-body
+    if title=="House Store | Home"
+      if product.discount
+          h4.ex-price #{product.price}$
+          h5 #{product.discountPrice}$
+      else
+          h4.ex-price #{product.price}$
+    else
+      if product.discount
+          h4 #{product.discountPrice}$
+      else
+          h4 #{product.price}$
+
+    

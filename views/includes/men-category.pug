@@ -1,0 +1,50 @@
+.container.closed-category.men-category.p-3(style='display: none; background-color: white;')
+                      .row.d-flex.flex-wrap.justify-content-between
+                        .col-3(style='border-right: 2px solid whitesmoke;')
+                          h4.mt-3.mb-2s Most preferred
+                          ul
+                            each category in categories
+                              if category.parent=="Men"
+                                if category.detail=="Most preferred"
+                                  li
+                                    a(href=`/categories/${category.name}`) #{category.name}
+                          h4.mt-3.mb-2s Underwear
+                          ul
+                            each category in categories
+                              if category.parent=="Men"
+                                if category.detail=="Underwear"
+                                  li
+                                    a(href=`/categories/${category.name}`) #{category.name}
+                        .col-3(style='border-right: 2px solid whitesmoke;')
+                          h4.mt-3.mb-2s OuterWear
+                          ul
+                            each category in categories
+                              if category.parent=="Men"
+                                if category.detail=="OuterWear"
+                                  li
+                                    a(href=`/categories/${category.name}`) #{category.name}
+                            
+                          h4.mt-3.mb-2s Accessory
+                          ul
+                            each category in categories
+                              if category.parent=="Men"
+                                if category.detail=="Accessory"
+                                  li
+                                    a(href=`/categories/${category.name}`) #{category.name}
+                        .col-6
+                          #standartCarousel.carousel.slide(data-ride='carousel')
+                            .carousel-inner(role='listbox')
+                              .carousel-item.active
+                                img.d-block.w-100(src='/img/nav-man1.png' width='100%' height='200')
+                              .carousel-item
+                                img.d-block.w-100(src='/img/nav-man2.png' width='100%' height='200')
+                            a.carousel-control-prev(href='#standartCarousel' role='button' data-slide='prev')
+                              span.carousel-control-prev-icon(aria-hidden='true')
+                              span.sr-only Previous
+                            a.carousel-control-next(href='#standartCarousel' role='button' data-slide='next')
+                              span.carousel-control-next-icon(aria-hidden='true')
+                              span.sr-only Next
+                          h4.mt-2 Lorem ipsum dolor
+                          p
+                            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus saepe numquam molestias inventore commodi quasi, obcaecati cum error!
+                          a.btn.btn-dark.float-right(href='#') Shop Now

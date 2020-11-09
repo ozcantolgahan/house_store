@@ -1,0 +1,25 @@
+{
+  "name": "house-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^15.0.3",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "connect-mongodb-session": "^2.4.1",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongodb": "^3.6.2",
+    "nodemon": "^2.0.6",
+    "path": "^0.12.7",
+    "pug": "^3.0.0"
+  }
+}

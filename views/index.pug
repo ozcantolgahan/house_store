@@ -1,0 +1,91 @@
+extends layouts/main-layout.pug
+block content
+    main
+      .container-fluid.p-0.mt-3.main-banner
+        .bd-example
+          #mainCarousel.carousel.slide(data-ride='carousel')
+            .carousel-inner(role='listbox')
+              .carousel-item.active
+                img.d-block.w-100(src='img/slider-3.png' width='100%' height='450px')
+                .carousel-caption.text-left(style='width:35%;top:30%')
+                  h3.main-banner-title First slide label
+                  p.main-banner-content Nulla vitae elit libero, a pharetra augue mollis interdum.
+                  a.btn.btn-dark.mr-2.main-banner-button(href='#') Read More
+                  a.btn.btn-outline-light.main-banner-button(href='#') Shop Now
+              .carousel-item
+                img.d-block.w-100(src='img/slider-2.png' width='100%' height='450px')
+                .carousel-caption.text-center(style='width:35%;top:50%;left:32%')
+                  h3 Second slide label
+                  p Nulla vitae elit libero, a pharetra augue mollis interdum.
+                  a.btn.btn-dark.mr-2(href='#') Read More
+                  a.btn.btn-outline-light(href='#') Shop Now
+            a.carousel-control-prev(href='#mainCarousel' role='button' data-slide='prev')
+              span.carousel-control-prev-icon(aria-hidden='true')
+              span.sr-only Previous
+            a.carousel-control-next(href='#mainCarousel' role='button' data-slide='next')
+              span.carousel-control-next-icon(aria-hidden='true')
+              span.sr-only Next
+      .container.mt-5.pt-3.mb-5.main-discount-products
+        h4.text-center.mb-4 Discount Products
+        .container.d-flex.flex-wrap.justify-content-between
+          each product in products
+            if product.discount
+              include includes/product.pug
+      .container-fluid.mt-3.mb-4.main-fragman-banner
+        .banner-content.text-center.text-white
+          b.display-4 Example Collections
+          p.mt-2
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ut tempore fuga quasi voluptatum nulla.
+          a.btn.btn-light(href='#') Read More
+          a.btn.btn-outline-light(href='#') Shop Now
+      .container.pb-2.pt-2.last-products
+        h4.mb-4 Last Products
+        .owl-carousel.owl-theme
+          each product in lastProducts
+            include includes/owl-item.pug
+      .container-fluid.mt-4.mb-4.pt-4.pb-2.fast-info
+        .container
+          .row
+            .col
+              .row
+                img(src='img/delivery.png' width='100' height='100' alt='')
+                .col
+                  h4 Lorem Ipsum Dolor
+                  p
+                    | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati incidunt et adipisci!
+            .col
+              .row
+                img(src='img/change.png' width='100' height='100' alt='')
+                .col
+                  h4 Lorem Ipsum Dolor
+                  p
+                    | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati incidunt et adipisci!
+      .main-box-info.container
+        .main-box-content
+          h4 Lorem Ipsum Dolor
+          p
+            | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse, libero rerum quas architecto expedita, quasi dolor aspernatur quae voluptatibus vitae tempore fuga officia accusamus fugit?
+          a.btn.btn-light(href='#') Shop Now
+      .mt-4.p-0.mb-4.container.box-infos
+        .card-deck
+          .card.text-center.text-white
+            .card-img.box-info-1
+              .card-img-overlay
+                h4 Deneme
+                p
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt iste earum et ipsam.
+                a.btn.btn-dark(href='#') Shop Now
+          .card.text-center.text-white
+            .card-img.box-info-2
+              .card-img-overlay
+                h4 Deneme
+                p
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt iste earum et ipsam.
+                a.btn.btn-dark(href='#') Shop Now
+          .card.text-center.text-white
+            .card-img.box-info-3
+              .card-img-overlay
+                h4 Deneme
+                p
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt iste earum et ipsam.
+                a.btn.btn-dark(href='#') Shop Now

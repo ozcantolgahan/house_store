@@ -1,0 +1,14 @@
+extends layouts/main-layout.pug
+block content
+    main
+        div.container.d-flex.flex-wrap.justify-content-between.main-discount-products
+            if products.length>0
+                each product in products
+                    include ./includes/product.pug
+            else
+                .container.pb-2.pt-2.last-products
+                    h4.mb-4.mt-4 This category is empty please check these
+                        .owl-carousel.owl-theme.mt-4
+                            each product in lastProducts
+                                include ./includes/owl-item.pug
+        

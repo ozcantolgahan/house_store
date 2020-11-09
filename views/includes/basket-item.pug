@@ -1,0 +1,17 @@
+.row.mt-2
+    .col-4
+        if title=="Orders"
+            img(src=`${product.imageUrl1}` width="60%" height="150px")
+        else
+            img(src=`${product.imageUrl1}` width="100%" height="100px")
+    .col
+        p #{product.name}
+        if product.discount
+            p(style="text-decoration:line-through;") #{product.price}$
+            p #{product.discountPrice}$
+        else
+            p #{product.price}$
+    .col-2
+        form(action="/removeFromBasket" method="GET")
+            input(type="hidden" value=product name="product")
+            button.btn.btn-danger(type="submit") Sil

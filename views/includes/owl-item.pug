@@ -1,0 +1,17 @@
+.item
+    .card(style="width:100%")
+        .productOpt
+            form(action=`/addToBasket` method="POST")
+                input(type="hidden" name="product" value=product)
+                button.productBasket(type="submit")
+                    .productBasket-logo
+            form(action=`/product/${product.name}` method="GET")
+                input(type="hidden" name="product" value=product)
+                button.productPrew(type='submit')
+                    .productPrew-logo(style="margin-top:-6px")
+        img(src=product.imageUrl1 width='100%' height='250px' alt='')
+        .card-body
+            if product.discount
+                h5 #{product.discountPrice}$
+            else
+                h5 #{product.price}$

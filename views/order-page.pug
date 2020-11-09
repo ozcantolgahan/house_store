@@ -1,0 +1,10 @@
+extends layouts/main-layout.pug
+block content
+    main
+        .container.p-2.mt-5.pb-5
+            if basket.length>0
+                each product in basket
+                    include ./includes/basket-item.pug
+                a.btn.btn-success.mt-3.float-right Complete
+            else
+                h5 Basket is empty

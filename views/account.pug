@@ -1,0 +1,42 @@
+extends layouts/main-layout.pug
+block content
+    main
+        .container.mt-5.mb-5
+            form(action= isRegister?"/register":"/login" method= isRegister?"POST":"GET")
+                if err
+                    if !isRegister
+                        .alert.alert-info.alert-dismissible.fade.show(role='alert')
+                            button.close(type='button' data-dismiss='alert' aria-label='Close')
+                                span(aria-hidden='true') ×
+                            strong #{err}
+                    else
+                        .alert.alert-danger.alert-dismissible.fade.show(role='alert')
+                            button.close(type='button' data-dismiss='alert' aria-label='Close')
+                                span(aria-hidden='true') ×
+                            strong #{err}
+                if isRegister
+                    .form-group.row
+                        label.col-sm-2.col-form-label(for='inputEmail3') Name
+                        .col-sm-10
+                            input#inputEmail3.form-control(type='text' name="name" placeholder='Name')
+                .form-group.row
+                    label.col-sm-2.col-form-label(for='inputEmail3') Email
+                    .col-sm-10
+                        input#inputEmail3.form-control(type='email' name="email" placeholder='Email')
+                .form-group.row
+                    label.col-sm-2.col-form-label(for='inputEmail3') Password
+                    .col-sm-10
+                        input#inputEmail3.form-control(type='password' name="password" placeholder='Password')
+                if isRegister
+                    .form-group.row
+                        label.col-sm-2.col-form-label(for='inputEmail3') Address
+                        .col-sm-10
+                            textarea#inputEmail3.form-control(type='text' name="address" placeholder='Address')
+                .form-group.row
+                    .col-sm-10.offset-sm-2
+                        if isRegister
+                            button.btn.btn-primary.mr-5(type='submit') Register
+                            a(href="/account/login") If you have an account,Login
+                        else
+                            button.btn.btn-primary.mr-5(type='submit') Sign In
+                            a(href="/account/register") If you have not an account,Register

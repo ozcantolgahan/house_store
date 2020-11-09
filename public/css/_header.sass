@@ -1,0 +1,112 @@
+@mixin logo-parent($size,$background-color)
+    width: $size
+    height: $size
+    border-radius: 50%
+    padding-top: 8px
+    display: inline-block
+    &:hover
+        background: $background-color !important
+@mixin logo($size,$background-image)
+    background-image: $background-image
+    width: $size
+    height: $size
+    background-size: contain
+    margin: auto
+
+.facebook
+    @include logo-parent(30px,#3b5998)  
+    &:hover .facebook-logo
+        background-image: url(../img/facebook_hover.png)  
+    .facebook-logo
+        @include logo($size: 15px ,$background-image: url(../img/facebook.png))
+    
+        
+
+.twitter
+    @include logo-parent(30px,#1DA1F2)  
+    &:hover .twitter-logo
+        background-image: url(../img/twitter_hover.png)  
+    .twitter-logo
+        @include logo($size: 15px ,$background-image: url(../img/twitter.png))
+      
+
+.instagram
+    @include logo-parent(30px,radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%))  
+    &:hover .instagram-logo
+        background-image: url(../img/instagram_hover.png)  
+    .instagram-logo
+        @include logo($size: 15px ,$background-image: url(../img/instagram.png))
+.search
+    @include logo-parent($size: 34px ,$background-color: #333333)
+    &:hover .search-logo
+        background-image: url(../img/search_hover.png)  
+    .search-logo
+        @include logo($size: 16px ,$background-image: url(../img/search.png))
+.basket
+    @include logo-parent($size: 34px ,$background-color: #333333)
+    &:hover .basket-logo
+        background-image: url(../img/basket_hover.png)  
+    .basket-logo
+        @include logo($size: 16px ,$background-image: url(../img/basket.png))
+.list
+    @include logo-parent($size: 34px ,$background-color: #333333)
+    &:hover .list-logo
+        background-image: url(../img/list_hover.png)  
+    .list-logo
+        @include logo($size: 16px ,$background-image: url(../img/list.png))
+.standart-nav
+    width: 50%
+    margin: auto
+    a
+        &:hover
+            color: #F67280 !important
+
+.closed-category
+    position: fixed
+    width: 100%
+    left: 5%
+    z-index: 100
+    ul
+        list-style-image: url(../img/right-arrow-angle.png)
+        padding: 0
+        padding-left: 20px
+        li
+            margin-top: 7px
+            a
+                color: black
+                text-decoration: none
+                &:hover
+                    color: #F67280
+.fixed-nav
+    position: fixed
+    left: 5%
+    top: 0%
+    z-index: 1000
+
+.main-banner-title,.main-banner-content
+    margin-left: -150px
+    opacity: 0
+.main-banner-button
+    margin-bottom: -110px
+    opacity: 0
+@mixin header-right-side($width)
+    width: $width
+    height: auto
+    background-color: #333333
+    position: absolute
+    z-index: 100
+    right: 0%
+    top: 10%
+    display: none
+
+    
+.search-bar
+    @include header-right-side(300px)    
+    input[type="submit"]
+        height: 38px
+.basket-bar
+    @include header-right-side(400px)
+    color: white
+.account-bar
+    @include header-right-side($width: 300px)
+    
